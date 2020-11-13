@@ -26,7 +26,7 @@ SECRET_KEY = '1n7e2q#%c)jw*z^pl$do)-u)f0m=_!jk-6mfx9nhqxhv6!m*ru'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,10 +41,14 @@ DEFAULT_APPS = [
 ]
 
 ADDITIONAL_APPS = [
-
+    'rest_framework',
 ]
 
-INSTALLED_APPS = DEFAULT_APPS + ADDITIONAL_APPS
+CREATED_APPS = [
+    'companies',
+]
+
+INSTALLED_APPS = DEFAULT_APPS + ADDITIONAL_APPS + CREATED_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
