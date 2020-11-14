@@ -1,3 +1,19 @@
 from django.db import models
 
-# Create your models here.
+class Company(models.Model):
+    SPECIALIZATION_CHOICES = tuple([(x,x) for x in (open('companies/choices/specializations.txt').read()).split('\n')])
+
+    name = models.CharField(max_length = 255, unique=True, blank=False)
+    description = models.TextField(blank=True, null=True)
+    specialization = models.CharField(max_length = 255, choices = SPECIALIZATION_CHOICES)
+    organization_date = models.DateField(blank=False)
+
+    def __str__(self):
+        return self.name
+
+class Partnership(models.Model):
+    PARTNERSHIP_CHOICES = tuple([(x,x) for x in (open('companies/choices/partnership_types.txt').read()).split('\n')])
+
+    type = models.CharField(max_length = 255, choices=PARTNERSHIP_CHOICES, blank = False)
+    companies = models.ManyToManyField('Company', blank=False)
+    description = models.TextField(blank=True, null=True)
