@@ -46,6 +46,7 @@ ADDITIONAL_APPS = [
 
 CREATED_APPS = [
     'companies',
+    'employee',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + ADDITIONAL_APPS + CREATED_APPS

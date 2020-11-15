@@ -7,6 +7,7 @@ class Company(models.Model):
     description = models.TextField(blank=True, null=True)
     specialization = models.CharField(max_length = 255, choices = SPECIALIZATION_CHOICES)
     organization_date = models.DateField(blank=False)
+    site = models.CharField(max_length = 255, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -17,3 +18,6 @@ class Partnership(models.Model):
     type = models.CharField(max_length = 255, choices=PARTNERSHIP_CHOICES, blank = False)
     companies = models.ManyToManyField('Company', blank=False)
     description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return ', '.join([company.name for company in self.companies.all()]) + " partnership"
