@@ -3,11 +3,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- CSS File -->
     {% block css %}{% endblock %}
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>{% block title %}{% endblock %}</title>
 </head>
-    <body>
-        This is a base page
-    </body>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'start_page' %}">Домой</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'companies_page' %}">Компании</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'partnerships_page' %}">Партнерства</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'employee_page' %}">Сотрудники</a>
+            </li>
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
 </html>

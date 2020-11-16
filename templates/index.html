@@ -1,13 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css %}
-<link rel="stylesheet" href="{% static 'index.css' %}">
-{% endblock %}
-
 {% block title %}
-    CRM Startpage
+    Начало
 {% endblock %}
-
-
-{% block inner %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'index_style.css' %}">
+{% endblock %}
+{% block content %}
+<div>
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h1>Компании</h1>
+        <p>Добавляйте и изменяйте любые компании в реестре.</p>
+        <button onclick="window.location.href ='{% url 'companies_page' %}'">Перейти</button>
+    </div>
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h1>Партнерство</h1>
+        <p>Огранизуйте партнерство любого вида между существующими компаниями.</p>
+        <button onclick="window.location.href ='{% url 'partnerships_page' %}'">Перейти</button>
+    </div>
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h1>Сотрудники</h1>
+        <p>Добавляйте сотрудников существующим компаниям, указывайте им должности, зарплаты и так далее.</p>
+        <button onclick="window.location.href ='{% url 'employee_page' %}'">Перейти</button>
+    </div>
+</div>
 {% endblock %}

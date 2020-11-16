@@ -1,0 +1,10 @@
+.container-margin {
+    margin-top: 100px;
+    text-align: center;
+}
+button {
+    border-radius: 5px;
+}
+button:hover {
+    background-color: lightgray;
+}

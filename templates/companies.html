@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Компании
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'showall.css' %}">
+{% endblock %}
+{% block content %}
+<div>
+    
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h1>Список компаний</h1>
+    </div>
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h2>My First Bootstrap Page</h2>
+        <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+    </div>
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h2>My First Bootstrap Page</h2>
+        <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+    </div>
+    <div class="container p-3 bg-dark text-white container-margin">
+        <h2>My First Bootstrap Page</h2>
+        <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+    </div>
+</div>
+{% endblock %}
