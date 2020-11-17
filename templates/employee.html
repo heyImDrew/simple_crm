@@ -8,21 +8,21 @@
 {% endblock %}
 {% block content %}
 <div>
-    
     <div class="container p-3 bg-dark text-white container-margin">
         <h1>Список сотрудников</h1>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'add_employee' %}'">Добавить</button>
     </div>
+    {% if employees %}
+        {% for employee in employees %}
+        <div class="container p-3 bg-dark text-white container-margin">
+            <h3>{{ employee.full_name }}, {{ employee.age }} лет</h3>
+            <p>Работает в {{ employee.company }} на позиции {{ employee.position }}</p>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'start_page' %}'">Подробнее</button>
+        </div>
+        {% endfor %}
+    {% else %}
     <div class="container p-3 bg-dark text-white container-margin">
-        <h2>My First Bootstrap Page</h2>
-        <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+        <p>Сотрудники не добавлены в систему</p>
     </div>
-    <div class="container p-3 bg-dark text-white container-margin">
-        <h2>My First Bootstrap Page</h2>
-        <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
-    </div>
-    <div class="container p-3 bg-dark text-white container-margin">
-        <h2>My First Bootstrap Page</h2>
-        <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
-    </div>
-</div>
+    {% endif %}
 {% endblock %}
