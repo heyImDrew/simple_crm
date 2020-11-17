@@ -20,4 +20,4 @@ class Partnership(models.Model):
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return "Партнерство " + ', '.join([company.name for company in self.companies.all()])
+        return ', '.join([company.name for company in self.companies.all()])

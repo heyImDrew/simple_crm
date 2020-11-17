@@ -5,24 +5,59 @@
 {% endblock %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'showall.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 {% endblock %}
 {% block content %}
+<script>
+    $(document).ready( function () {
+        $('#table_id').DataTable( {
+            paging: false,
+            searching: true,
+            ordering: true,
+        } );
+    } );
+</script>
 <div>
     <div class="container p-3 bg-dark text-white container-margin">
-        <h1>Список сотрудников</h1>
+        <h1>Список работников</h1>
         <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'add_employee' %}'">Добавить</button>
     </div>
     {% if employees %}
-        {% for employee in employees %}
         <div class="container p-3 bg-dark text-white container-margin">
-            <h3>{{ employee.full_name }}, {{ employee.age }} лет</h3>
-            <p>Работает в {{ employee.company }} на позиции {{ employee.position }}</p>
-            <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'start_page' %}'">Подробнее</button>
+            <table class="table" id="table_id">
+                <thead>
+                <tr>
+                    <th scope="col">ФИО</th>
+                    <th scope="col">Возраст</th>
+                    <th scope="col">Компания</th>
+                    <th scope="col">Должность</th>
+                    <th scope="col">Заработная плата</th>
+                    <th scope="col">#</th>
+                </tr>
+                </thead>
+                <tbody>
+    
+                {% for employee in employees %}
+                <tr>
+                    <td style="color: black;">{{ employee.full_name }}</th>
+                    <td style="color: black;">{{ employee.age }}</td>
+                    <td style="color: black;">{{ employee.company }}</td>
+                    <td style="color: black;">{{ employee.position }}</td>
+                    <td style="color: black;">{{ employee.salary }}</td>
+                    <td><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'start_page' %}'">Подробнее</button></td>
+                </tr>
+                {% endfor %}
+    
+                </tbody>
+            </table>
         </div>
-        {% endfor %}
     {% else %}
     <div class="container p-3 bg-dark text-white container-margin">
-        <p>Сотрудники не добавлены в систему</p>
+        <p>Партнерства не добавлены в систему</p>
     </div>
     {% endif %}
+</div>
 {% endblock %}
