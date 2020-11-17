@@ -5,3 +5,6 @@
 #table_id_filter {
     color: white !important;
 }
+#table_id_info {
+    opacity: 0;
+}

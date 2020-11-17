@@ -42,11 +42,13 @@ DEFAULT_APPS = [
 
 ADDITIONAL_APPS = [
     'rest_framework',
+    'django_filters',
 ]
 
 CREATED_APPS = [
     'companies',
     'employee',
+    'api',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + ADDITIONAL_APPS + CREATED_APPS

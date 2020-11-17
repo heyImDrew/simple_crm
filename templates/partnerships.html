@@ -4,11 +4,11 @@
     Партнерства
 {% endblock %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'showall.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="{% static 'showall.css' %}">
 {% endblock %}
 {% block content %}
 <script>
@@ -33,7 +33,6 @@
                     <th scope="col">Компании</th>
                     <th scope="col">Тип партнерства</th>
                     <th scope="col">Дополнительно</th>
-                    <th scope="col">#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,7 +42,6 @@
                     <td style="color: black;">{{ partnership }}</th>
                     <td style="color: black;">{{ partnership.type }}</td>
                     <td style="color: black;">{{ partnership.description }}</td>
-                    <td><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'start_page' %}'">Подробнее</button></td>
                 </tr>
                 {% endfor %}
     
