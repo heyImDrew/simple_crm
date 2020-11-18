@@ -35,6 +35,7 @@
                     <th scope="col">Дата организации</th>
                     <th scope="col">Сайт</th>
                     <th scope="col">Дополнительно</th>
+                    <th scope="col">#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,7 @@
                     <td style="color: black;">{{ company.organization_date }}</td>
                     <td style="color: black;">{{ company.site }}</td>
                     <td style="color: black;">{{ company.description }}</td>
+                    <td style="color: black;"><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'delete_company' company.id %}'">Удалить</button></td>
                 </tr>
                 {% endfor %}
     

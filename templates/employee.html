@@ -35,6 +35,7 @@
                     <th scope="col">Компания</th>
                     <th scope="col">Должность</th>
                     <th scope="col">Заработная плата</th>
+                    <th scope="col">#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,7 @@
                     <td style="color: black;">{{ employee.company }}</td>
                     <td style="color: black;">{{ employee.position }}</td>
                     <td style="color: black;">{{ employee.salary }}</td>
+                    <td style="color: black;"><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'delete_employee' employee.id %}'">Удалить</button></td>
                 </tr>
                 {% endfor %}
     
@@ -54,7 +56,7 @@
         </div>
     {% else %}
     <div class="container p-3 bg-dark text-white container-margin">
-        <p>Партнерства не добавлены в систему</p>
+        <p>Работники не добавлены в систему</p>
     </div>
     {% endif %}
 </div>

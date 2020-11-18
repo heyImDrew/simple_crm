@@ -13,7 +13,13 @@
         <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href ='{% url 'employee_page' %}'">Назад</button>
     </div>
     <div class="container p-3 bg-dark text-white container-margin">
-        <p>Форма</p>
+        <form method="post">
+            {% csrf_token %}
+            <table style="text-align: left;">
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </div>
 {% endblock %}

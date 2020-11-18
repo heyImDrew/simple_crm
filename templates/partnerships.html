@@ -33,6 +33,7 @@
                     <th scope="col">Компании</th>
                     <th scope="col">Тип партнерства</th>
                     <th scope="col">Дополнительно</th>
+                    <th scope="col">#</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,7 @@
                     <td style="color: black;">{{ partnership }}</th>
                     <td style="color: black;">{{ partnership.type }}</td>
                     <td style="color: black;">{{ partnership.description }}</td>
+                    <td style="color: black;"><button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href = '{% url 'delete_partnership' partnership.id %}'">Удалить</button></td>
                 </tr>
                 {% endfor %}
     
