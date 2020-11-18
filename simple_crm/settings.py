@@ -53,6 +53,12 @@ CREATED_APPS = [
 
 INSTALLED_APPS = DEFAULT_APPS + ADDITIONAL_APPS + CREATED_APPS
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
